@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" id="contenedor">
+      <div class="card" style="width: 18rem;" *ngFor="let chars of personajes">
+        <img src={{chars.image}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{chars.name}}</h5>
+          <p style="text-align: left;">Name: {{chars.name}}<br>
+            Specie: {{chars.species}}<br>
+            Status: {{chars.status}}
+          </p>
+          <a href="#" class="btn btn-primary">Show Information</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
