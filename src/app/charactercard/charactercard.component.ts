@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RickmortyService } from '../rickmorty.service';
 
 @Component({
   selector: 'app-charactercard',
@@ -10,17 +11,10 @@ export class CharactercardComponent implements OnInit {
 
   personajes:any = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private rickmortyService: RickmortyService) { }
 
   ngOnInit(){
-    this.http.get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6").subscribe(
-      result => {
-        this.personajes = result;
-      },
-      error => {
-        console.log('Error occurred')
-      }
-    )
-  }
-
+    this.rickmortyService.retornar().
+    subscribe(result =>  this.personajes = result)
+}
 }
